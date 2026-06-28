@@ -33,6 +33,8 @@ final class ReviewController extends AbstractController
             $entityManager->persist($review);
             $entityManager->flush();
 
+            $this->addFlash('success', 'Thank you for your review!');
+
             return $this->redirectToRoute('app_review_index', [], Response::HTTP_SEE_OTHER);
         }
 
